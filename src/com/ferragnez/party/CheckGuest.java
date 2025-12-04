@@ -16,15 +16,25 @@ public class CheckGuest {
         scanner.close();
 
         boolean guestFound = false;
-
         int i;
+        
         for (i = 0; i < guests.length; i++) {
             if (name.replaceAll(" ", "").toLowerCase().equals(guests[i].replaceAll(" ", "").toLowerCase())) {
                 guestFound = true;
                 break;
             }
         }
-        
+
+        i = 0;
+        while (i < guests.length) {
+            if (name.replaceAll(" ", "").toLowerCase().equals(guests[i].replaceAll(" ", "").toLowerCase())) {
+                guestFound = true;
+                break;
+            } else {
+                i++;
+            }
+        }
+
         if (guestFound) {
             System.out.println("Benvenuto/a alla festa, " + guests[i] + '!');
         } else {
