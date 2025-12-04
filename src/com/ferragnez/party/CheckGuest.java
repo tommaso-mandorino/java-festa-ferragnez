@@ -19,7 +19,7 @@ public class CheckGuest {
 
         int i;
         for (i = 0; i < guests.length; i++) {
-            if (name.equals(guests[i])) {
+            if (name.replaceAll(" ", "").toLowerCase().equals(guests[i].replaceAll(" ", "").toLowerCase())) {
                 guestFound = true;
                 break;
             }
